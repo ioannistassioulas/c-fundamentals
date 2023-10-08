@@ -1,6 +1,0 @@
-#include "../public_header/line.hh"
-
-#include <iostream>
-#include <cctype>
-
-using namespace std;
