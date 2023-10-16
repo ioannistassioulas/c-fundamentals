@@ -5,15 +5,10 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    cout << *(*argv + 2) << '\n';
-    cout << ++*(*argv + 2) << '\n';
-    cout << *(*argv + 2) << '\n';
+    cout << ++argv[0]<< '\n';
+    cout << argv[0] << '\n';
+    
+    cout << ++*argv<< '\n';
+    cout << *argv << '\n';
 }
-/*
-./a.o
-0x7fffe584fdf8
-0x7fffe584fdf8
-0x7fffe584fe00
-1
-0x7fffe584fe00
-*/
+

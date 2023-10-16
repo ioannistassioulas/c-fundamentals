@@ -10,21 +10,27 @@ pointer notation:  *(x + 4);
 ----------------------------------------------------------------------------
   int x[8];           x[2] = x[3];
 
-pointer notation:  *(x+2) = *(x+3);
-       semantics:  set the data located in the second index after x to be
-                   equal to the data located in the third index after x.
+pointer notation:  *(x + 2) = *(x + 3);
+       semantics:  set the data located in the second int after x to be
+                   equal to the data located in the third int after x.
+                   These locations are reached by dereferencing the addresses
+                   of x + 2 and x + 3.
 ----------------------------------------------------------------------------
   char *argv[8];      cout << argv[2];
 
 pointer notation:  cout << *(argv + 2);     
-       semantics:  Prints out the data of the 2nd index after argv[0], 
-                   which means that pointer data of argv[2] is printed.
+       semantics:  Prints out the data of the 2nd index after argv[0],
+                   which is obtained by dereferencing the address of
+                   argv + 2 with (*) (adding ints to arrays returns 
+                   addresses).
 ----------------------------------------------------------------------------
   int x[8];           &x[10] - &x[3];
  
-pointer notation:  x + 10 - x + 3;    
+pointer notation:  7;    
        semantics:  subtract the location of the 10th index from the 3rd,
                    resulting in the distance between both address points.
+                   Initially written as (x+10) - (x+3), but x's are cancelled
+                   to return 10 - 3, which we may further simplify to 7.
 ----------------------------------------------------------------------------
   main's argv;        argv++[0];
 
@@ -35,7 +41,7 @@ pointer notation:  *argv++;
 ---------------------------------------------------------------------------
   main's argv;        argv[0]++;
 
-pointer notation:  (*argv)++;
+pointer notation:  *argv = *argv + 1;
        semantics:  Increments the pointer to char of argv[0] by 1,
                    so next time argv[0] is called, the 0th char is
                    of the first argument is omitted (i.e. /a.o instead 
@@ -43,14 +49,18 @@ pointer notation:  (*argv)++;
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0];
 
-pointer notation:  ++(*argv[0]);
+pointer notation:  ++*argv;
        semantics:  Increments the pointer to chars of first argument, 
                    then returns the incremented value.
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];
 
 pointer notation:  ++*(*argv + 2);  
-       semantics:  Increments the char, increasing its value. In the case
-                   of argv being passed as "./a.o 1 2", argv[0][2] or
-                   *(*argv + 2) refers to the 'a' char, incrementing to a 'b'
+       semantics:  Dereferences argv to obtain pointer to first argument. 
+                   Increments the value of pointer by 2 to return address of 
+                   second char in first argument. Dereferences that pointer
+                   to obtain value of argv[0][2]. Increments char,such that:
+                   if argv being passed as "./a.o 1 2", argv[0][2] or
+                   *(*argv + 2) refers to the 'a' char, incrementing 'a' to
+                   'b'.
 ----------------------------------------------------------------------------
