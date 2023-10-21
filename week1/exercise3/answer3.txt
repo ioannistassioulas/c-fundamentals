@@ -1,0 +1,20 @@
+1. Object-oriented: C++ introduced classes into C, which allowed one to 
+   work within within structs but with inherently private data. Helps
+   keep code encapsulated and keeps data hidden.
+
+2. Exceptions handling: C++ introduced error handling by way of throwing
+   and catching exceptions.
+
+3. Stricter type-checking: C++ improved upon C's type checking by requiring
+   that all prototypes are known before any functions are called.
+
+4. Function overloading: C++ lets us overload functions by simply changing
+   the parameters we pass in - we can even keep the same name. It does this
+   via name-mangling i.e. function are identified as a combination of their
+   name as well as their parameters and return variables.
+
+5. Memory management is made easier with the new and delete keywords - no 
+   more is it necessary to call alloc() functions!
+
+6. The introduction of namespaces in C++ allows for clearer functional 
+   overloading, and more human-readable code.

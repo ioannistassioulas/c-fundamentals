@@ -1,0 +1,13 @@
+1. A declaration is simply telling the compiler that some kind of datatype 
+   or function exists. A definition fleshes out the functionality/content of 
+   said function/datatype.
+
+2. Header files are used to declare  external functions that a program might 
+   need to use.
+
+3. 
+
+4. No, a library is a compilation of 
+
+5. That object file is not an executable program yet because it still needs
+   to be linked to the library file.

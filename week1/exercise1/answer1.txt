@@ -1,0 +1,17 @@
+Commands entered:
+g++ hello.cc -o hello.o hello -Wall -Werror --std=c++23
+
+An executable is something that can be run all on it's own, while
+an object file is still missing the final linking from the 
+
+Program output:
+saved in output file . . .
+
+size of bytes:
+
+source file: 92
+preprocessed: 92 [-e] -> gives nothing
+preprocessed, compiled: 14472 [-s] -> gives a.out
+preprocessed, compiled, assembled: 2008 [-c] -> gives hello.o
+preprocessed, compiled, assembled, linked: 16440 [-o] -> gives hello
+iostream: 3024 bytes
